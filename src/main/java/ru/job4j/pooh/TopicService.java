@@ -22,7 +22,7 @@ public class TopicService implements Service {
         if ("POST".equals(req.httpRequestType())) {
             return put(req);
         }
-        return new Resp("No Content", "204");
+        return new Resp("", "204");
     }
 
     private Resp put(Req req) {
