@@ -19,11 +19,11 @@ public class QueueService implements Service {
     public Resp process(Req req) {
         if ("POST".equals(req.httpRequestType())) {
             return post(req);
-        }
-        if ("GET".equals(req.httpRequestType())) {
+        } else if ("GET".equals(req.httpRequestType())) {
             return get(req);
+        } else {
+            return new Resp("No Content", "204");
         }
-        return new Resp("No Content", "204");
     }
 
     private Resp post(Req req) {

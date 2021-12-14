@@ -18,11 +18,11 @@ public class TopicService implements Service {
     public Resp process(Req req) {
         if ("GET".equals(req.httpRequestType())) {
             return get(req);
-        }
-        if ("POST".equals(req.httpRequestType())) {
+        } else if ("POST".equals(req.httpRequestType())) {
             return put(req);
+        } else {
+            return new Resp("", "204");
         }
-        return new Resp("", "204");
     }
 
     private Resp put(Req req) {
