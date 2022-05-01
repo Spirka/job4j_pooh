@@ -22,7 +22,7 @@ public class QueueService implements Service {
         } else if ("GET".equals(req.httpRequestType())) {
             return get(req);
         } else {
-            return new Resp("No Content", "204");
+            return new Resp("Not Implemented", "501");
         }
     }
 
